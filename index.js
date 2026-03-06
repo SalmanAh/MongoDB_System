@@ -10,6 +10,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public')); // Serve HTML/CSS files
 
 // Session configuration
 app.use(session({
@@ -40,7 +41,7 @@ function isAuthenticated(req, res, next) {
 
 // Home route
 app.get('/', (req, res) => {
-  res.send('Welcome to Login System! Use /register, /login, /dashboard, /logout');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 // Register Route - POST /register
