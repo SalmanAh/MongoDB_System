@@ -11,6 +11,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: gradientShift 10s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -22,15 +30,31 @@ body {
 .form-box, .dashboard-box {
     background: white;
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 30px;
-    font-size: 28px;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .input-group {
@@ -47,38 +71,42 @@ label {
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 16px;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
     outline: none;
     border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
 }
 
 .btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 17px;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
 .btn:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
 }
 
 .message {
@@ -108,13 +136,22 @@ input[type="password"]:focus {
 }
 
 .welcome {
-    font-size: 20px;
+    font-size: 24px;
     color: #333;
     margin: 30px 0;
-    font-weight: 500;
+    font-weight: 600;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
 }
 
 .logout-btn {
     margin-top: 20px;
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+.logout-btn:hover {
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
 }

@@ -9,9 +9,9 @@
 <body>
     <div class="container">
         <div class="dashboard-box">
-            <h1>Dashboard</h1>
-            <p class="welcome" id="welcomeMessage">Loading...</p>
-            <button class="btn logout-btn" id="logoutBtn">Logout</button>
+            <h1>📊 Dashboard</h1>
+            <p class="welcome" id="welcomeMessage">⏳ Loading...</p>
+            <button class="btn logout-btn" id="logoutBtn">🚪 Logout</button>
         </div>
     </div>
 
@@ -23,13 +23,13 @@
                 const data = await response.json();
                 
                 if (response.ok) {
-                    document.getElementById('welcomeMessage').textContent = data.message;
+                    document.getElementById('welcomeMessage').textContent = '👋 ' + data.message;
                 } else {
-                    alert('Please login first');
+                    alert('⚠️ Please login first');
                     window.location.href = 'login.html';
                 }
             } catch (error) {
-                alert('Error: ' + error.message);
+                alert('❌ Error: ' + error.message);
                 window.location.href = 'login.html';
             }
         }
@@ -40,10 +40,10 @@
                 const response = await fetch('/logout');
                 const data = await response.json();
                 
-                alert(data.message);
+                alert('✅ ' + data.message);
                 window.location.href = 'login.html';
             } catch (error) {
-                alert('Error: ' + error.message);
+                alert('❌ Error: ' + error.message);
             }
         });
 

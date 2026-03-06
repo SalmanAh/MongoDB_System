@@ -9,15 +9,15 @@
 <body>
     <div class="container">
         <div class="form-box">
-            <h1>Register</h1>
+            <h1>🚀 Register</h1>
             <form id="registerForm">
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="username">👤 Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username">
                 </div>
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="password">🔒 Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
                 </div>
                 <button type="submit" class="btn">Register</button>
                 <p class="message" id="message"></p>
@@ -45,17 +45,17 @@
                 
                 if (response.ok) {
                     messageEl.style.color = 'green';
-                    messageEl.textContent = data.message;
+                    messageEl.textContent = '✅ ' + data.message;
                     setTimeout(() => {
                         window.location.href = 'login.html';
                     }, 1500);
                 } else {
                     messageEl.style.color = 'red';
-                    messageEl.textContent = data.message;
+                    messageEl.textContent = '❌ ' + data.message;
                 }
             } catch (error) {
                 messageEl.style.color = 'red';
-                messageEl.textContent = 'Error: ' + error.message;
+                messageEl.textContent = '❌ Error: ' + error.message;
             }
         });
     </script>
